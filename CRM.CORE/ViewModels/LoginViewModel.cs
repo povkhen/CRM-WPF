@@ -1,10 +1,8 @@
-﻿using CRM.Core;
-using CRM.CORE;
-using System.Security;
+﻿using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace CRM.WPF
+namespace CRM.CORE
 {
 
     /// <summary>
@@ -19,6 +17,12 @@ namespace CRM.WPF
         /// The command to login
         /// </summary>
         public ICommand LoginCommand { get; set; }
+
+
+        /// <summary>
+        /// The command to register for a new account
+        /// </summary>
+        public ICommand RegisterCommand { get; set; }
 
         #endregion
 
@@ -45,7 +49,8 @@ namespace CRM.WPF
         {
 
             // Create commands
-            LoginCommand = new RelayParamatrizedCommand(async (parameter) => await Login(parameter));
+            LoginCommand = new RelayParamatrizedCommand(async (parameter) => await LoginAsync(parameter));
+            RegisterCommand = new RelayCommand(async () => await RegisterAsync());
 
 
         }
@@ -56,14 +61,28 @@ namespace CRM.WPF
         /// </summary>
         /// <param name="parameter"> The <see cref="SecureString" passed in from the view for the users password/></param>
         /// <returns></returns>
-        private async Task Login(object parameter)
+        private async Task LoginAsync(object parameter)
         {
-            await RunCommand(() => this.LoginIsRunning, async () =>
-            { 
+            await RunCommandAsync (() => this.LoginIsRunning, async () =>
+            {
                 await Task.Delay(500);
-                var username = this.Username;    
+                var username = this.Username;
             });
-            
+
+            var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
+
+        }
+
+        /// <summary>
+        /// Takes the user to the register page
+        /// </summary>
+        /// <param name="parameter"> The <see cref="SecureString" passed in from the view for the users password/></param>
+        /// <returns></returns>
+        private async Task RegisterAsync()
+        {
+            // TODO: Go to register page
+            //((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Register;
+            await Task.Delay(1);
         }
     }
 }

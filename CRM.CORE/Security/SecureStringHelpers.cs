@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
-namespace CRM.WPF
+namespace CRM.CORE
 {
     /// <summary>
     /// Helpers for the <see cref="SecureString"/> class

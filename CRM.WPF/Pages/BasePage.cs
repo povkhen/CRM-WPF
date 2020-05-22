@@ -1,9 +1,7 @@
-﻿using CRM.Core;
-using System;
+﻿using CRM.CORE;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media.Animation;
 
 namespace CRM.WPF
 {
@@ -44,10 +42,7 @@ namespace CRM.WPF
         /// </summary>
         public VM ViewModel
         {
-            get
-            {
-                return mViewModel;
-            }
+            get => mViewModel;
             set
             {
                 if (mViewModel == value)
@@ -70,7 +65,7 @@ namespace CRM.WPF
             if (this.PageLoadAnimation != PageAnimation.None)
                 this.Visibility = Visibility.Collapsed;
 
-            this.Loaded += BasePage_Loaded;
+            this.Loaded += BasePage_LoadedAsync;
             this.ViewModel = new VM();
         }
 
@@ -84,9 +79,9 @@ namespace CRM.WPF
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void BasePage_Loaded(object sender, RoutedEventArgs e)
+        private async void BasePage_LoadedAsync(object sender, RoutedEventArgs e)
         {
-            await AnimateIn();
+            await AnimateInAsync();
 
         }
 
@@ -94,7 +89,7 @@ namespace CRM.WPF
         /// Animates in this page
         /// </summary>
         /// <returns></returns>
-        public async Task AnimateIn()
+        public async Task AnimateInAsync()
         {
             if (this.PageLoadAnimation == PageAnimation.None)
                 return;
@@ -113,7 +108,7 @@ namespace CRM.WPF
         /// Animates the page out
         /// </summary>
         /// <returns></returns>
-        public async Task AnimateOut()
+        public async Task AnimateOutAsync()
         {
             if (this.PageUnloadAnimation == PageAnimation.None)
                 return;

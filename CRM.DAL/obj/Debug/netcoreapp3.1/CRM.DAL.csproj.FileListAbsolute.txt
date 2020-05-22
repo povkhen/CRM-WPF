@@ -1,6 +1,7 @@
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\bin\Debug\netcoreapp3.1\CRM.DAL.deps.json
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\bin\Debug\netcoreapp3.1\CRM.DAL.dll
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\bin\Debug\netcoreapp3.1\CRM.DAL.pdb
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\obj\Debug\netcoreapp3.1\CRM.DAL.csprojAssemblyReference.cache
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\obj\Debug\netcoreapp3.1\CRM.DAL.AssemblyInfoInputs.cache
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\obj\Debug\netcoreapp3.1\CRM.DAL.AssemblyInfo.cs
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.DAL\obj\Debug\netcoreapp3.1\CRM.DAL.dll

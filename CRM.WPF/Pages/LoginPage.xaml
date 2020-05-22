@@ -1,9 +1,10 @@
-﻿<local:BasePage x:TypeArguments="local:LoginViewModel" x:Class="CRM.WPF.LoginPage"
+﻿<local:BasePage x:TypeArguments="core:LoginViewModel" x:Class="CRM.WPF.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CRM.WPF"
+      xmlns:core="clr-namespace:CRM.CORE"
       mc:Ignorable="d" 
       x:Name="Page"
       d:DesignHeight="700" d:DesignWidth="700"
@@ -46,7 +47,8 @@
                         </StackPanel>
                     </Border>
 
-                    <Button Content="I already have an account"
+                    <Button Content="Or create a free account..."
+                            Command="{Binding RegisterCommand}"
                             HorizontalAlignment="Center"/>
 
                 </StackPanel>

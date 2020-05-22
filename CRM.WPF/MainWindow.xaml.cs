@@ -1,4 +1,4 @@
-﻿using CRM.Core;
+﻿using CRM.CORE;
 using System.Windows;
 
 namespace CRM.WPF

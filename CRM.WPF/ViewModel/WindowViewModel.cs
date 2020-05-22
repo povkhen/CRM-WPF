@@ -1,4 +1,4 @@
-﻿using CRM.Core;
+﻿using CRM.CORE;
 using System.Windows;
 using System.Windows.Input;
 

@@ -1,4 +1,4 @@
-﻿using CRM.Core;
+﻿using CRM.CORE;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -17,6 +17,13 @@ namespace CRM.WPF
             {
                 case ApplicationPage.Login:
                     return new LoginPage();
+
+                case ApplicationPage.Register:
+                    return new RegisterPage();
+
+
+                case ApplicationPage.Home:
+                    return new HomePage();
 
                 default:
                     Debugger.Break();

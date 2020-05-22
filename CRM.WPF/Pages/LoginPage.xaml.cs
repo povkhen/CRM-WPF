@@ -1,5 +1,4 @@
-﻿using CRM.Core;
-using CRM.CORE;
+﻿using CRM.CORE;
 using System.Security;
 
 namespace CRM.WPF

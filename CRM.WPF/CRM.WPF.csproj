@@ -30,6 +30,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Pages\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\Windows.xaml">
       <SubType>Designer</SubType>
     </Page>

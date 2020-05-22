@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace CRM.Core
+namespace CRM.CORE
 {
     /// <summary>
     /// A basic paramatrized command that runs an Action
