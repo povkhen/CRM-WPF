@@ -16,12 +16,35 @@ namespace CRM.WPF
         /// <param name="seconds"> the time animation will take</param>
         /// <param name="offset">The distance to the right to start from</param>
         /// <param name="decelerationRatio">The rate of deceleration</param>
-        public static void AddSlideFromRight(this Storyboard storyBoard, float seconds, double offset, float decelerationRatio = 0.9f)
+        /// <param name="keepMarginTrue">Whether to keep the element at the same width during animation </param>
+        public static void AddSlideFromRight(this Storyboard storyBoard, float seconds, double offset, bool keepMargin = true, float decelerationRatio = 0.9f)
         {
             var animation = new ThicknessAnimation
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
-                From = new Thickness(offset, 0, -offset, 0),
+                From = new Thickness(keepMargin ? offset : 0, 0, -offset, 0),
+                To = new Thickness(0),
+                DecelerationRatio = decelerationRatio
+            };
+
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            storyBoard.Children.Add(animation);
+        }
+
+        /// <summary>
+        /// Add a slide and animation to the storyboard
+        /// </summary>
+        /// <param name="storyBoard">storyboard to add the animation to</param>
+        /// <param name="seconds"> the time animation will take</param>
+        /// <param name="offset">The distance to the left to start from</param>
+        /// <param name="decelerationRatio">The rate of deceleration</param>
+        /// <param name="keepMarginTrue">Whether to keep the element at the same width during animation </param>
+        public static void AddSlideFromLeft(this Storyboard storyBoard, float seconds, double offset, float decelerationRatio = 0.9f, bool keepMargin = true)
+        {
+            var animation = new ThicknessAnimation
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = new Thickness(-offset, 0, keepMargin ? offset : 0, 0),
                 To = new Thickness(0),
                 DecelerationRatio = decelerationRatio
             };
@@ -54,15 +77,38 @@ namespace CRM.WPF
         /// </summary>
         /// <param name="storyBoard">storyboard to add the animation to</param>
         /// <param name="seconds"> the time animation will take</param>
-        /// <param name="offset">The distance to the right to start from</param>
+        /// <param name="offset">The distance to the left to end at from</param>
         /// <param name="decelerationRatio">The rate of deceleration</param>
-         public static void AddSlideToLeft(this Storyboard storyBoard, float seconds, double offset, float decelerationRatio = 0.9f)
+        /// <param name="keepMarginTrue">Whether to keep the element at the same width during animation </param>
+        public static void AddSlideToLeft(this Storyboard storyBoard, float seconds, double offset, float decelerationRatio = 0.9f, bool keepMargin = true)
         {
             var animation = new ThicknessAnimation
             {
                 Duration = new Duration(TimeSpan.FromSeconds(seconds)),
                 From = new Thickness(0),
-                To = new Thickness(-offset, 0, offset, 0),
+                To = new Thickness(-offset, 0, keepMargin ? offset : 0, 0),
+                DecelerationRatio = decelerationRatio
+            };
+
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            storyBoard.Children.Add(animation);
+        }
+
+        /// <summary>
+        /// Add a slide to right and animation to the storyboard
+        /// </summary>
+        /// <param name="storyBoard">storyboard to add the animation to</param>
+        /// <param name="seconds"> the time animation will take</param>
+        /// <param name="offset">The distance to the rignt to start from</param>
+        /// <param name="decelerationRatio">The rate of deceleration</param>
+        /// <param name="keepMarginTrue">Whether to keep the element at the same width during animation </param>
+        public static void AddSlideToRight(this Storyboard storyBoard, float seconds, double offset, float decelerationRatio = 0.9f, bool keepMargin = true)
+        {
+            var animation = new ThicknessAnimation
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                From = new Thickness(0),
+                To = new Thickness(keepMargin ? offset : 0, 0, -offset, 0),
                 DecelerationRatio = decelerationRatio
             };
 

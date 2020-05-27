@@ -1,0 +1,8 @@
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\bin\Debug\netcoreapp3.1\CRM.HelperLogic.deps.json
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\bin\Debug\netcoreapp3.1\CRM.HelperLogic.dll
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\obj\Debug\netcoreapp3.1\CRM.HelperLogic.csprojAssemblyReference.cache
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\obj\Debug\netcoreapp3.1\CRM.HelperLogic.AssemblyInfoInputs.cache
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\obj\Debug\netcoreapp3.1\CRM.HelperLogic.AssemblyInfo.cs
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\bin\Debug\netcoreapp3.1\CRM.HelperLogic.pdb
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\obj\Debug\netcoreapp3.1\CRM.HelperLogic.dll
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.HelperLogic\obj\Debug\netcoreapp3.1\CRM.HelperLogic.pdb

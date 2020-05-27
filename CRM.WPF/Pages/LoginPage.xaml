@@ -34,14 +34,19 @@
                                        FontSize="40"
                                        FontFamily="{StaticResource LatoRegular}"
                                        Foreground="{StaticResource WordBlueBrush}" />
-    
-                            <TextBox Text="{Binding Username}" Tag="Username"/>
+
+                            <TextBox Text="{Binding Username}"
+                                     Tag="Username" 
+                                     local:IsFocusedProperty.Value="true"/>
+                            
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30"/>
 
                             <Button
                                 Command="{Binding LoginCommand}"
+                                IsDefault="True"
                                 CommandParameter="{Binding ElementName=Page}"
                                 Content="Login"
+                                local:IsBusyProperty.Value ="{Binding LoginIsRunning}"
                                 HorizontalAlignment="Center"/>
 
                         </StackPanel>

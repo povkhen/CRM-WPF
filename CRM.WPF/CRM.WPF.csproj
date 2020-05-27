@@ -20,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CRM.CORE\CRM.CORE.csproj" />
+    <ProjectReference Include="..\CRM.DATA\CRM.DATA.csproj" />
+    <ProjectReference Include="..\CRM.HelperLogic\CRM.HelperLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +41,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="MainWindow - Copy.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\HomePage.xaml">
       <SubType>Designer</SubType>
     </Page>

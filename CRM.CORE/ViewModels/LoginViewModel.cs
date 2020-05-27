@@ -10,6 +10,7 @@ namespace CRM.CORE
     /// </summary>
     public class LoginViewModel : BaseViewModel
     {
+        private readonly IAuthService _authService = new AuthService();
 
         #region Commands
 
@@ -48,30 +49,22 @@ namespace CRM.CORE
         public LoginViewModel()
         {
 
+
             // Create commands
-            LoginCommand = new RelayParamatrizedCommand(async (parameter) => await LoginAsync(parameter));
+            LoginCommand = new RelayParamatrizedCommand(async (parameter) => 
+            {
+                await Task.Delay(1000);
+                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Home);
+                await _authService.LoginAsync(parameter, LoginIsRunning);
+
+            });
+       
+            
             RegisterCommand = new RelayCommand(async () => await RegisterAsync());
-
-
         }
         #endregion
 
-        /// <summary>
-        /// Attempts to log the user in
-        /// </summary>
-        /// <param name="parameter"> The <see cref="SecureString" passed in from the view for the users password/></param>
-        /// <returns></returns>
-        private async Task LoginAsync(object parameter)
-        {
-            await RunCommandAsync (() => this.LoginIsRunning, async () =>
-            {
-                await Task.Delay(500);
-                var username = this.Username;
-            });
-
-            var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
-
-        }
+       
 
         /// <summary>
         /// Takes the user to the register page
@@ -80,8 +73,8 @@ namespace CRM.CORE
         /// <returns></returns>
         private async Task RegisterAsync()
         {
-            // TODO: Go to register page
-            //((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Register;
+
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register); 
             await Task.Delay(1);
         }
     }

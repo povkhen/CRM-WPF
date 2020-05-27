@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Controls\PageHost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Controls\WelcomeControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Dialogs\DialogMessageBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\LoginPage.xaml.cs">
@@ -15,7 +21,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\WelcomeControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\DialogMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow - Copy.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\HomePage.xaml">
@@ -27,7 +42,7 @@
     <Page Update="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="DialogWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Windows.xaml">

@@ -1,4 +1,4 @@
-﻿<local:BasePage x:TypeArguments="core:LoginViewModel" x:Class="CRM.WPF.RegisterPage"
+﻿<local:BasePage x:TypeArguments="core:RegisterViewModel" x:Class="CRM.WPF.RegisterPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -39,7 +39,8 @@
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30"/>
 
                             <Button
-                                Command="{Binding LoginCommand}"
+                                Command="{Binding RegisterCommand}"
+                                local:IsBusyProperty.Value="{Binding RegisterIsRunning}"
                                 CommandParameter="{Binding ElementName=Page}"
                                 Content="Register"
                                 HorizontalAlignment="Center"/>
@@ -48,6 +49,7 @@
                     </Border>
 
                     <Button Content="Or, I already have an account..."
+                            Command="{Binding LoginCommand}"
                             HorizontalAlignment="Center"/>
 
                 </StackPanel>

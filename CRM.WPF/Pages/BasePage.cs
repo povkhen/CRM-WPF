@@ -6,20 +6,10 @@ using System.Windows.Controls;
 namespace CRM.WPF
 {
     /// <summary>
-    /// A base page for all pages to gain base functionally
+    /// Base page for all pages to gain base functionality  
     /// </summary>
-    public class BasePage<VM> : Page
-        where VM : BaseViewModel, new()
+    public class BasePage : Page
     {
-        #region Private Member
-
-        /// <summary>
-        /// The View Model associated with this page 
-        /// </summary>
-        private VM mViewModel;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
@@ -35,24 +25,12 @@ namespace CRM.WPF
         /// <summary>
         /// The time any slide animation takes to complete
         /// </summary>
-        public float SlideSeconds { get; set; } = 0.8f;
-
+        public float SlideSeconds { get; set; } = 0.4f;
+       
         /// <summary>
-        /// The View Model associated with this page
+        /// A flat to indicate if this page should animate out on load
         /// </summary>
-        public VM ViewModel
-        {
-            get => mViewModel;
-            set
-            {
-                if (mViewModel == value)
-                    return;
-                mViewModel = value;
-
-                
-                this.DataContext = mViewModel;
-            }
-        }
+        public bool ShouldAnimateOut { get; set; }
         #endregion
 
         #region Constructor
@@ -66,14 +44,13 @@ namespace CRM.WPF
                 this.Visibility = Visibility.Collapsed;
 
             this.Loaded += BasePage_LoadedAsync;
-            this.ViewModel = new VM();
         }
 
         #endregion
 
 
         #region Animation Load / Unload
-        
+
         /// <summary>
         /// Once the page is loaded, perform any required animation
         /// </summary>
@@ -81,7 +58,10 @@ namespace CRM.WPF
         /// <param name="e"></param>
         private async void BasePage_LoadedAsync(object sender, RoutedEventArgs e)
         {
-            await AnimateInAsync();
+            if (ShouldAnimateOut)
+                await AnimateOutAsync();
+            else
+                await AnimateInAsync();
 
         }
 
@@ -99,7 +79,7 @@ namespace CRM.WPF
                 case PageAnimation.SlideAndFadeInFromRight:
                     await this.SlideAndFadeInFromRight(this.SlideSeconds);
                     break;
-                
+
             }
         }
 
@@ -122,6 +102,57 @@ namespace CRM.WPF
         }
 
         #endregion
+
+
+
+    }
+
+    /// <summary>
+    /// A base page with added ViewModel support
+    /// </summary>
+    public class BasePage<VM> : BasePage
+        where VM : BaseViewModel, new()
+    {
+        #region Private Member
+
+        /// <summary>
+        /// The View Model associated with this page 
+        /// </summary>
+        private VM mViewModel;
+
+        #endregion
+
+       
+        /// <summary>
+        /// The View Model associated with this page
+        /// </summary>
+        public VM ViewModel
+        {
+            get => mViewModel;
+            set
+            {
+                if (mViewModel == value)
+                    return;
+                mViewModel = value;
+
+                
+                this.DataContext = mViewModel;
+            }
+        }
+        
+
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public BasePage() : base()
+        {
+            this.ViewModel = new VM();
+        }
+
+        #endregion
+
 
     }
 }

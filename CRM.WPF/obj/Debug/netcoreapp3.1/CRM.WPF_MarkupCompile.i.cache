@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.WPF\App.xaml
-101372342166
+13-1932111064
 
-19-2042783731
-2161933838608
-Controls\WelcomeControl.xaml;MainWindow.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
+312102449715
+232-1609246784
+Controls\PageHost.xaml;Controls\WelcomeControl.xaml;Dialogs\DialogMessageBox.xaml;DialogWindow.xaml;MainWindow - Copy.xaml;Pages\HomePage.xaml;Pages\LoginPage.xaml;Pages\RegisterPage.xaml;Styles\Buttons.xaml;Styles\Colors.xaml;Styles\Fonts.xaml;Styles\Texts.xaml;Styles\Windows.xaml;
 
-False
+True
 
