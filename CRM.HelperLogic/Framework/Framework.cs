@@ -9,15 +9,6 @@ namespace CRM.HelperLogic
     {
         #region Public Properties
 
-        /// <summary>
-        /// The framework construction used in this application.
-        /// NOTE: This should be set by the consuming application at the very start of the program
-        /// </summary>
-        /// <example>
-        /// <code>
-        ///     Framework.Construct&lt;DefaultFrameworkConstruction&gt;();
-        /// </code>
-        /// </example>
         public static FrameworkConstruction Construction { get; private set; }
 
         /// <summary>

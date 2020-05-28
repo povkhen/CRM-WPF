@@ -1208,14 +1208,6 @@
         "runtime": {
           "CRM.HelperLogic.dll": {}
         }
-      },
-      "CRM.DAL/1.0.0.0": {
-        "runtime": {
-          "CRM.DAL.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -2044,11 +2036,6 @@
     },
     "CRM.HelperLogic/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "CRM.DAL/1.0.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

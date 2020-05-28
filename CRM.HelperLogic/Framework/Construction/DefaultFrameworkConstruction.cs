@@ -11,7 +11,7 @@ namespace CRM.HelperLogic
         /// <summary>
         /// Default constructor
         /// </summary>
-        public DefaultFrameworkConstruction()
+        public DefaultFrameworkConstruction() : base()
         {
             // Configure...
             this.AddDefaultConfiguration()

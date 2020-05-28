@@ -1,4 +1,6 @@
 ﻿using CRM.CORE;
+using CRM.DATA;
+using CRM.HelperLogic;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -31,13 +33,16 @@ namespace CRM.WPF
         /// </summary>
         private async Task ApplicationSetupAsync()
         {
-            
+            Framework.Construct<DefaultFrameworkConstruction>()
+                .UseClientDataStore()
+                .Build();
 
             IoC.Setup();
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
             IoC.Kernel.Bind<IAuthService>().ToConstant(new AuthService());
 
             await IoC.ClientDataStore.EnsureDataStoreAsync();
+
         }
     }
 }

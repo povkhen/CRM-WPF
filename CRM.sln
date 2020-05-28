@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRM.CORE", "CRM.CORE\CRM.CO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRM.DATA", "CRM.DATA\CRM.DATA.csproj", "{4FF24B55-74C4-45CE-BD80-A69C842D0916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRM.HelperLogic", "CRM.HelperLogic\CRM.HelperLogic.csproj", "{9E664CEF-6258-4074-8960-7DB80588E5F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRM.HelperLogic", "CRM.HelperLogic\CRM.HelperLogic.csproj", "{9E664CEF-6258-4074-8960-7DB80588E5F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

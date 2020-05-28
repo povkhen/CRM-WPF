@@ -21,6 +21,11 @@ namespace CRM.CORE
         public static IUIManager UI => IoC.Get<IUIManager>();
 
         /// <summary>
+        /// A shortcut to access the <see cref="IUIManager"/>
+        /// </summary>
+        public static IAuthService Auth => IoC.Get<IAuthService>();
+
+        /// <summary>
         /// A shortcut to access the <see cref="IClientDataStore"/>
         /// </summary>
         public static IClientDataStore ClientDataStore => Framework.Service<IClientDataStore>();

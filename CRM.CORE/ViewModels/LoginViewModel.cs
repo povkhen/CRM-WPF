@@ -10,7 +10,6 @@ namespace CRM.CORE
     /// </summary>
     public class LoginViewModel : BaseViewModel
     {
-        private readonly IAuthService _authService = new AuthService();
 
         #region Commands
 
@@ -55,7 +54,7 @@ namespace CRM.CORE
             {
                 await Task.Delay(1000);
                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Home);
-                await _authService.LoginAsync(parameter, LoginIsRunning);
+                await IoC.Auth.LoginAsync(parameter, LoginIsRunning);
 
             });
        

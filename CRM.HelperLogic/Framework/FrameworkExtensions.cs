@@ -81,10 +81,9 @@ namespace CRM.HelperLogic
         /// <returns></returns>
         public static FrameworkConstruction AddDefaultServices(this FrameworkConstruction construction)
         {
-            // Add exception handler
 
             // Add default logger
-            construction.AddDefaultLogger();
+            //construction.AddDefaultLogger();
 
             // Chain the construction
             return construction;
