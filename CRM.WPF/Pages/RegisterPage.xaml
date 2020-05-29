@@ -10,7 +10,7 @@
       d:DesignHeight="700" d:DesignWidth="700"
       Title="RegisterPage">
     <Page.Resources>
-
+        <local:GenderValueConverter x:Key="genderConverterKey" />
     </Page.Resources>
 
     <Border Background="{StaticResource WordBlueBrush }">
@@ -29,14 +29,36 @@
                             Width="330"
                             Margin="50 50 50 0">
                         <StackPanel>
-                            
+
                             <TextBlock Text="Sign up"
                                        FontSize="40"
                                        FontFamily="{StaticResource LatoRegular}"
                                        Foreground="{StaticResource WordBlueBrush}" />
-    
+
                             <TextBox Text="{Binding Username}" Tag="Username"/>
-                            <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30"/>
+                            <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 40"/>
+
+                            <TextBox Text="{Binding FullName }" Tag="Fullname"/>
+                            <TextBox Text="{Binding Email }" Tag="Email"/>
+                            <TextBox Text="{Binding Country }" Tag="Country"/>
+                            <TextBox Text="{Binding City }" Tag="City"/>
+
+                            <TextBlock Text="Date of your birth"
+                                       FontSize="20"
+                                       FontFamily="{StaticResource LatoRegular}"
+                                       Foreground="{StaticResource WordBlueBrush}" />
+                            <DatePicker Height="25"
+                                        HorizontalAlignment="Center"
+                                        DisplayDate="{Binding BirthDate}"
+                                        Margin="42,26,0,0"
+                                        Width="115" />
+
+                            <TextBlock Text="Gender"
+                                       FontSize="20"
+                                       FontFamily="{StaticResource LatoRegular}"/>
+                            
+                            <RadioButton Content="M" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=genderConverterKey}, ConverterParameter=Male}" />
+                            <RadioButton Content="F" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=genderConverterKey}, ConverterParameter=Female}" />
 
                             <Button
                                 Command="{Binding RegisterCommand}"

@@ -16,7 +16,7 @@ namespace CRM.WPF
         /// <summary>
         /// The Application view model
         /// </summary>
-        public static ApplicationViewModel ApplicationViewModel => IoC.Get<ApplicationViewModel>();
+        public ApplicationViewModel ApplicationViewModel => IoC.Get<ApplicationViewModel>();
 
     }
 }

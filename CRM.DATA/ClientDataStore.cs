@@ -64,5 +64,15 @@ namespace CRM.DATA
             _dbContext.LoginCredentials.Add(loginCredentialsDataModel);
             await _dbContext.SaveChangesAsync();
         }
+
+        /// <summary>
+        /// Removes all login credentials stored in the data store
+        /// </summary>
+        /// <returns></returns>
+        public async Task ClearAllLoginCredentialsAsync()
+        {
+            _dbContext.LoginCredentials.RemoveRange(_dbContext.LoginCredentials);
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

@@ -15,6 +15,48 @@ namespace CRM.HelperLogic
     public class WebRequests
     {
         /// <summary>
+        /// GETs a web request to an URL and returns the raw http web response
+        /// </summary>
+        /// <remarks>IMPORTANT: Remember to close the returned <see cref="HttpWebResponse"/> stream once done</remarks>
+        /// <param name="url">The URL</param>
+        /// <param name="configureRequest">Allows caller to customize and configure the request prior to the request being sent</param>
+        /// <param name="bearerToken">If specified, provides the Authorization header with `bearer token-here` for things like JWT bearer tokens</param>
+        /// <returns></returns>
+        public static async Task<HttpWebResponse> GetAsync(string url, Action<HttpWebRequest> configureRequest = null, string bearerToken = null)
+        {
+            
+            var request = WebRequest.CreateHttp(url);
+
+           
+            request.Method = HttpMethod.Get.ToString();
+
+         
+            if (bearerToken != null)
+                
+                request.Headers.Add(HttpRequestHeader.Authorization, $"Bearer {bearerToken}");
+
+            configureRequest?.Invoke(request);
+
+            try
+            {
+                
+                return await request.GetResponseAsync() as HttpWebResponse;
+            }
+            
+            catch (WebException ex)
+            {
+                
+                if (ex.Response is HttpWebResponse httpResponse)
+                    
+                    return httpResponse;
+
+              
+                throw;
+            }
+        }
+
+
+        /// <summary>
         /// Posts a web requests to an URL and return the raw http web response
         /// </summary>
         /// <param name="url">The URL to post to</param>
@@ -24,7 +66,9 @@ namespace CRM.HelperLogic
         /// <returns></returns>
         public static async Task<HttpWebResponse> PostAsync(string url, object content = null,
             KnownContentSerializers sendType = KnownContentSerializers.Json,
-            KnownContentSerializers returnType = KnownContentSerializers.Json)
+            KnownContentSerializers returnType = KnownContentSerializers.Json,
+            Action<HttpWebRequest> configureRequest = null,
+            string bearerToken = null)
         {
             // create the web request
             var request = WebRequest.CreateHttp(url);
@@ -32,6 +76,13 @@ namespace CRM.HelperLogic
 
             request.Accept = returnType.ToMimeString();
             request.ContentType = sendType.ToMimeString();
+            
+            if (bearerToken != null)
+                // Add bearer token to header
+                request.Headers.Add(HttpRequestHeader.Authorization, $"Bearer {bearerToken}");
+
+            // Any custom work
+            configureRequest?.Invoke(request);
 
             if (content == null)
             {
@@ -64,7 +115,22 @@ namespace CRM.HelperLogic
                 
             }
 
-            return await request.GetResponseAsync() as HttpWebResponse; 
+            try
+            {
+                var response = await request.GetResponseAsync();
+                return await request.GetResponseAsync() as HttpWebResponse;
+            }
+
+            catch (WebException ex)
+            {
+
+                if (ex.Response is HttpWebResponse httpResponse)
+
+                    return httpResponse;
+
+
+                throw;
+            }
         }
 
         /// <summary>

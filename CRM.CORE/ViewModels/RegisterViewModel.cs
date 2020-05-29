@@ -1,4 +1,5 @@
-﻿using System.Security;
+﻿using System;
+using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -10,7 +11,7 @@ namespace CRM.CORE
     /// </summary>
     public class RegisterViewModel : BaseViewModel
     {
-        private readonly IAuthService _authService = new AuthService();
+
 
         #region Commands
 
@@ -29,10 +30,20 @@ namespace CRM.CORE
 
         #region Public Properties
 
-        /// <summary>
-        /// The username of user
-        /// </summary>
         public string Username { get; set; }
+
+        public string Password { get; set; }
+
+        public string Gender { get; set; }
+        public string FullName { get; set; }
+
+        public string Email { get; set; }
+
+        public DateTime BirthDate { get; set; }
+
+        public string Country { get; set; }
+
+        public string City { get; set; }
 
         /// <summary>
         /// Indicating flag if the register is running
@@ -69,15 +80,31 @@ namespace CRM.CORE
         {
             await RunCommandAsync(() => RegisterIsRunning, async () =>
             {
-                await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-                {
-                    Title = "Send Message",
-                    Message = "Thanks",
-                    OkText = "Ok"
-                });
+                await IoC.Auth.RegisterAsync
+                (
+                    new RegisterCredentials
+                    {
+                        Password = UnsecurePassword(parameter),
+                        UserName = this.Username,
+                        Gender = this.Gender,
+                        FullName = this.FullName,
+                        BirthDate = this.BirthDate,
+                        City = this.City,
+                        Country = this.Country,
+                        Email = this.Email
+                    }, 
+                    registeIsRunning
+                );
 
             });
         }
+
+        /// <summary>
+        /// Unsecure password to string
+        /// </summary>
+        /// <param name="pass">Secure string</param>
+        /// <returns></returns>
+        private string UnsecurePassword(object pass) => (pass as IHavePassword).SecurePassword.Unsecure();
 
         /// <summary>
         /// Takes the user to the login page

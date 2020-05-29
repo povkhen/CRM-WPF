@@ -1,4 +1,5 @@
-﻿using CRM.CORE;
+﻿using AutoMapper;
+using CRM.CORE;
 using CRM.DATA;
 using CRM.HelperLogic;
 using System.Threading.Tasks;
@@ -18,8 +19,14 @@ namespace CRM.WPF
         protected override async void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             await ApplicationSetupAsync();
+            
+
+            IoC.Application.GoToPage(
+                await IoC.ClientDataStore.HasCredentialsAsync() ?
+                ApplicationPage.Home :
+                ApplicationPage.Login
+                );
 
 
             Current.MainWindow = new MainWindow();
@@ -40,6 +47,8 @@ namespace CRM.WPF
             IoC.Setup();
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
             IoC.Kernel.Bind<IAuthService>().ToConstant(new AuthService());
+            IoC.Kernel.Bind<IMapper>().ToConstructor(c => new Mapper(AutoMapperConfig.CreateConfiguration())).InSingletonScope();
+
 
             await IoC.ClientDataStore.EnsureDataStoreAsync();
 

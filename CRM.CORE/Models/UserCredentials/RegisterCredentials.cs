@@ -5,7 +5,7 @@ namespace CRM.CORE
     /// <summary>
     /// The credentials for an API client to register into the server
     /// </summary>
-    public class RegisterCredentialsApiModel
+    public class RegisterCredentials
     {
 
         #region Public Properties
@@ -29,12 +29,7 @@ namespace CRM.CORE
 
         public string City { get; set; }
 
-        public RegisterCredentialsApiModel()
-        {
-            CreatedAt = DateTime.Now;
-            LastActive = DateTime.Now;
-        }
-
+        
         #endregion
 
     }

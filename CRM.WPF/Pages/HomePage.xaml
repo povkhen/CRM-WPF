@@ -16,8 +16,7 @@
     <Border Background="{StaticResource WordBlueBrush }">
         <Grid>
             <local:WelcomeControl 
-                Height="300"
-                Width="500"
+                
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"/>
         </Grid>

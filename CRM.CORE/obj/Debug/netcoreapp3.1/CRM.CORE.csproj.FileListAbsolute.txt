@@ -1,12 +1,12 @@
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.CORE.deps.json
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.CORE.dll
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.CORE.pdb
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.HelperLogic.dll
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.HelperLogic.pdb
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.csprojAssemblyReference.cache
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.AssemblyInfoInputs.cache
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.AssemblyInfo.cs
+C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.csproj.Fody.CopyLocal.cache
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.csproj.CopyComplete
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.dll
 C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.pdb
-C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\obj\Debug\netcoreapp3.1\CRM.CORE.csproj.Fody.CopyLocal.cache
-C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.HelperLogic.dll
-C:\Users\misha\Desktop\PNN\projects\CRM\CRM.CORE\bin\Debug\netcoreapp3.1\CRM.HelperLogic.pdb

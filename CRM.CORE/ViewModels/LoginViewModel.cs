@@ -47,23 +47,36 @@ namespace CRM.CORE
         /// <param name="window"></param>
         public LoginViewModel()
         {
-
-
             // Create commands
-            LoginCommand = new RelayParamatrizedCommand(async (parameter) => 
-            {
-                await Task.Delay(1000);
-                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Home);
-                await IoC.Auth.LoginAsync(parameter, LoginIsRunning);
-
-            });
-       
-            
+            LoginCommand = new RelayParamatrizedCommand(async (parameter) => await LoginAsync(parameter));
             RegisterCommand = new RelayCommand(async () => await RegisterAsync());
         }
         #endregion
 
-       
+        /// <summary>
+        /// Takes the user to the register page
+        /// </summary>
+        /// <param name="parameter"> The <see cref="SecureString" passed in from the view for the users password/></param>
+        /// <returns></returns>
+        private async Task LoginAsync(object parameter)
+        {
+            await RunCommandAsync(() => LoginIsRunning, async () =>
+            {
+                await IoC.Auth.LoginAsync(
+                    new LoginCredentials
+                    {
+                        UserName = this.Username,
+                        Password = (parameter as IHavePassword).SecurePassword.Unsecure()
+                    },
+                    LoginIsRunning);
+                
+                if (await IoC.ClientDataStore.HasCredentialsAsync())
+                    IoC.Application.GoToPage(ApplicationPage.Home);
+
+
+            });
+        }
+
 
         /// <summary>
         /// Takes the user to the register page

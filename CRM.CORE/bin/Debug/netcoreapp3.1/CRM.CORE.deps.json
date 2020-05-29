@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "CRM.CORE/1.0.0": {
         "dependencies": {
+          "AutoMapper": "9.0.0",
           "CRM.HelperLogic": "1.0.0",
           "Fody": "6.1.2",
           "Microsoft.Extensions.Configuration": "3.1.4",
@@ -27,7 +28,20 @@
           "CRM.CORE.dll": {}
         }
       },
+      "AutoMapper/9.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        }
+      },
       "Fody/6.1.2": {},
+      "Microsoft.CSharp/4.5.0": {},
       "Microsoft.Extensions.Configuration/3.1.4": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.4"
@@ -942,10 +956,6 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "3.1.4",
           "Microsoft.Extensions.Configuration.Json": "3.1.4",
           "Microsoft.Extensions.DependencyInjection": "3.1.4",
-          "Microsoft.Extensions.Logging": "3.1.4",
-          "Microsoft.Extensions.Logging.Configuration": "3.1.4",
-          "Microsoft.Extensions.Logging.Console": "3.1.4",
-          "Microsoft.Extensions.Logging.Debug": "3.1.4",
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
@@ -960,12 +970,26 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "path": "automapper/9.0.0",
+      "hashPath": "automapper.9.0.0.nupkg.sha512"
+    },
     "Fody/6.1.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-V8MWJKrdEyNk/oHJEeDf1J2sCuvKN6namS05H75Oigim7LjVZ0dYu0Evq0U9aOejSsOc7ChGsBTGylqI/pv1iw==",
       "path": "fody/6.1.2",
       "hashPath": "fody.6.1.2.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/3.1.4": {
       "type": "package",

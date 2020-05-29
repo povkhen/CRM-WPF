@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Reflection;
@@ -82,42 +81,11 @@ namespace CRM.HelperLogic
         public static FrameworkConstruction AddDefaultServices(this FrameworkConstruction construction)
         {
 
-            // Add default logger
-            //construction.AddDefaultLogger();
+            
 
             // Chain the construction
             return construction;
         }
 
-        /// <summary>
-        /// Injects the default logger into the framework construction
-        /// </summary>
-        /// <param name="construction">The construction</param>
-        /// <returns></returns>
-        public static FrameworkConstruction AddDefaultLogger(this FrameworkConstruction construction)
-        {
-            // Add logging as default
-            construction.Services.AddLogging(options =>
-            {
-                // Default to debug level
-                options.SetMinimumLevel(LogLevel.Debug);
-
-                // Setup loggers from configuration
-                options.AddConfiguration(construction.Configuration.GetSection("Logging"));
-
-                // Add console logger
-                options.AddConsole();
-
-                // Add debug logger
-                options.AddDebug();
-            });
-
-            // Adds a default logger so that we can get a non-generic ILogger
-            // that will have the category name of "CRM"
-            construction.Services.AddTransient(provider => provider.GetService<ILoggerFactory>().CreateLogger("CRM"));
-
-            // Chain the construction
-            return construction;
-        }
     }
 }

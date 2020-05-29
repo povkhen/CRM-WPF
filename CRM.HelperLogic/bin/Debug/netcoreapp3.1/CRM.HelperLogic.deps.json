@@ -12,10 +12,6 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "3.1.4",
           "Microsoft.Extensions.Configuration.Json": "3.1.4",
           "Microsoft.Extensions.DependencyInjection": "3.1.4",
-          "Microsoft.Extensions.Logging": "3.1.4",
-          "Microsoft.Extensions.Logging.Configuration": "3.1.4",
-          "Microsoft.Extensions.Logging.Console": "3.1.4",
-          "Microsoft.Extensions.Logging.Debug": "3.1.4",
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
@@ -39,17 +35,6 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.Binder/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {
             "assemblyVersion": "3.1.4.0",
             "fileVersion": "3.100.420.21409"
           }
@@ -140,90 +125,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Logging/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection": "3.1.4",
-          "Microsoft.Extensions.Logging.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Options": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Abstractions/3.1.4": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Configuration/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.4",
-          "Microsoft.Extensions.Options.ConfigurationExtensions": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Configuration.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Console/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Logging": "3.1.4",
-          "Microsoft.Extensions.Logging.Configuration": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Debug/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Debug.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Options/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Primitives": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
-      "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.4": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Configuration.Binder": "3.1.4",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.4",
-          "Microsoft.Extensions.Options": "3.1.4"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
-            "assemblyVersion": "3.1.4.0",
-            "fileVersion": "3.100.420.21409"
-          }
-        }
-      },
       "Microsoft.Extensions.Primitives/3.1.4": {
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
@@ -261,13 +162,6 @@
       "sha512": "sha512-k7IJME4US5S5JFOGYaei5TLwutp8IqUvcBWtliKXETGn/JScmCgfej21xq5+ttxi0qZhiyJY06y9dw+cLh3kiQ==",
       "path": "microsoft.extensions.configuration.abstractions/3.1.4",
       "hashPath": "microsoft.extensions.configuration.abstractions.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Configuration.Binder/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rN0FlUcOmHpGX1BFGZbtTgsXWwHO9pRTocynckXpqCvcMzqehS36aN+lfIlG3PriFulHF2kzwNVfhBakc072iw==",
-      "path": "microsoft.extensions.configuration.binder/3.1.4",
-      "hashPath": "microsoft.extensions.configuration.binder.3.1.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/3.1.4": {
       "type": "package",
@@ -324,55 +218,6 @@
       "sha512": "sha512-PGbPg8h8cUYXEovoeNvpHgdFhKnx/539E14zF1vxFz2V6cc1QmQGONbfVHEJcjbuyGyyiNyqgpPInymsVup7ow==",
       "path": "microsoft.extensions.filesystemglobbing/3.1.4",
       "hashPath": "microsoft.extensions.filesystemglobbing.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FZDJ0cnW2hZRYCA88XQUOrAwgk6+Df/fSz+wfZkZneEQgJZp7XJ6pRvzt4ug118wJ7JGZehWkbMwwigBDcYZPA==",
-      "path": "microsoft.extensions.logging/3.1.4",
-      "hashPath": "microsoft.extensions.logging.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Abstractions/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-JNPxhw2XwhjfGFyIkA5eBfzUDPNpa6Q50HJ2F6lCAMoSa1GquAktTrl4PhEyTYFNmu09B0E90WhYsUb3kmSkOA==",
-      "path": "microsoft.extensions.logging.abstractions/3.1.4",
-      "hashPath": "microsoft.extensions.logging.abstractions.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Configuration/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-FwFVjkeYkiXtBBH6xJDsxhO6hDCxJ0I6c2qDUHBRiDUIrn6N7eXvdwQNQ+cL7XO7n6Xi3pkT+z3EQRvglIkEuQ==",
-      "path": "microsoft.extensions.logging.configuration/3.1.4",
-      "hashPath": "microsoft.extensions.logging.configuration.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Console/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Solz/9q7CaEJBGUVWCzxrJ4VW4Hff202s4spSbTizEn4BoL94WfeXliK8k8+PTJuqj0U5tsoTJFv4tql/7nz9Q==",
-      "path": "microsoft.extensions.logging.console/3.1.4",
-      "hashPath": "microsoft.extensions.logging.console.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Debug/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tPBo2IZIK1aic+cLjiLtdzb/2Vk8KPNF4E3Qz6KiS9KVdcwLCm7v6TYx0zV4OHOGDHllxDqnTUo0DtEbJ6g6dg==",
-      "path": "microsoft.extensions.logging.debug/3.1.4",
-      "hashPath": "microsoft.extensions.logging.debug.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Options/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ntWmD8i6UmAo0nn5MiCXIVl3+75aybVHgP/NxL9B16zwsbGkSfs+66BullsGEDNvrimgIFVDO+iB/h0yWfATWg==",
-      "path": "microsoft.extensions.options/3.1.4",
-      "hashPath": "microsoft.extensions.options.3.1.4.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tTXDVrLUv+cqCu7piSoVWk4BNcDAPGCIsoir19VEjMzefpBPS/HlXtR26RctHDsdo2qdAeyPNSEqtNc2g/7/qg==",
-      "path": "microsoft.extensions.options.configurationextensions/3.1.4",
-      "hashPath": "microsoft.extensions.options.configurationextensions.3.1.4.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/3.1.4": {
       "type": "package",

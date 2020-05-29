@@ -32,5 +32,13 @@ namespace CRM.CORE
         /// <param name="loginCredentialsDataModel">The login credentials to save</param>
         /// <returns>The task that will finish once the save is complete</returns>
         Task StoreLoginCredentialsAsync(LoginCredentialsDataModel loginCredentialsDataModel);
+
+        /// <summary>
+        /// Removes all login credentials stored in the data store
+        /// </summary>
+        /// <returns></returns>
+        Task ClearAllLoginCredentialsAsync();
     }
+
+
 }

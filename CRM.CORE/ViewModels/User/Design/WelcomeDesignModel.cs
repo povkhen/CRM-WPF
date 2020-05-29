@@ -1,4 +1,6 @@
-﻿namespace CRM.CORE
+﻿using System.Threading.Tasks;
+
+namespace CRM.CORE
 {
     /// <summary>
     /// The design-time data for a <see cref="WelcomeUserViewModel"/>
@@ -10,21 +12,15 @@
         /// <summary>
         /// A single instance of the dising model
         /// </summary>
-        public static WelcomeDesignModel Instance => new WelcomeDesignModel();
+        public static WelcomeDesignModel Instance => IoC.Mapper.Map<WelcomeDesignModel>(GetLoginCredential());
 
+        
+        private static LoginCredentialsDataModel GetLoginCredential()
+        {
+            return IoC.ClientDataStore.GetLoginCredentialsAsync().Result;
+        }
         #endregion
 
-        /// <summary>
-        /// Default contructor
-        /// </summary>
-        public WelcomeDesignModel()
-        {
-           
-            Username = "Misha";
-            FullName = "Misha Povkh";
-            Email = "a@a.a";
-            Phone = "911";
-        }
 
     }
 }

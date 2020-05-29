@@ -1,4 +1,5 @@
-﻿using CRM.HelperLogic;
+﻿using AutoMapper;
+using CRM.HelperLogic;
 using Ninject;
 
 namespace CRM.CORE
@@ -29,6 +30,11 @@ namespace CRM.CORE
         /// A shortcut to access the <see cref="IClientDataStore"/>
         /// </summary>
         public static IClientDataStore ClientDataStore => Framework.Service<IClientDataStore>();
+
+        /// <summary>
+        /// A shortcut to access the <see cref="IMapper"/>
+        /// </summary>
+        public static IMapper Mapper => IoC.Get<IMapper>();
 
 
         /// <summary>
